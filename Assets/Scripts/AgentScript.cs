@@ -7,7 +7,6 @@ public class AgentScript : MonoBehaviour {
     private NavMeshAgent agent;
     float last_velocity = 0.0f;
     public GameObject Player;
-    public GameObject Path;
     GameObject DestinationBuilding;
     int in_Player_company_agents = 0;
     int in_Enemy_company_agents = 0;
@@ -17,30 +16,38 @@ public class AgentScript : MonoBehaviour {
     TextMesh last_building_text;
     TextMesh new_building_text;
     // Use this for initialization
+    int AgentNumber = 1;
     void Start () {
 
-        agent = GetComponent<NavMeshAgent>();
-
+        agent = Player.GetComponent<NavMeshAgent>();
+       
 	}
-
+    public void SetAgentNumber(int index)
+    {
+        AgentNumber = index+1;
+    }
     // Update is called once per frame
     void Update () {
 	    if(Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            Player.GetComponent<Renderer>().enabled = true;
-
+            
             if (Physics.Raycast(ray,out hit)) 
             {
-                last_building_name = destination_building_name;
-                last_building_text = new_building_text;
-                destination_building_name = hit.transform.name;
-                DestinationBuilding = GameObject.Find(destination_building_name);
-                new_building_text = DestinationBuilding.GetComponentInChildren<TextMesh>();
-                destination_building_tag = hit.transform.tag;
-                agent.destination = DestinationBuilding.transform.position;
-
+                if(hit.transform.tag == "Corporation")
+                {
+                    GameObject.Find("Agent" + AgentNumber.ToString()).GetComponent<Renderer>().enabled = true;
+                    agent = GameObject.Find("Agent" + AgentNumber.ToString()).GetComponent<NavMeshAgent>();
+                    last_building_name = destination_building_name;
+                    last_building_text = new_building_text;
+                    destination_building_name = hit.transform.name;
+                    DestinationBuilding = GameObject.Find(destination_building_name);
+                    new_building_text = DestinationBuilding.GetComponentInChildren<TextMesh>();
+                    destination_building_tag = hit.transform.tag;
+                    agent.destination = DestinationBuilding.transform.position;
+                }
+                
             }
         }
         
@@ -52,7 +59,7 @@ public class AgentScript : MonoBehaviour {
         {
             last_velocity = 0.0f;
             if (destination_building_tag == "Corporation")
-                Player.GetComponent<Renderer>().enabled = false;
+                GameObject.Find("Agent" + AgentNumber.ToString()).GetComponent<Renderer>().enabled = false;
             if (destination_building_name == "Player Company")
             {
                 in_Player_company_agents++;

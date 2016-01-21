@@ -11,8 +11,7 @@ public class Camera_Controls : MonoBehaviour {
     public float cameraDistance = 500f;
     // Use this for initialization
     void Start () {
-	
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -45,10 +44,12 @@ public class Camera_Controls : MonoBehaviour {
         {
             transform.Rotate(Vector3.forward * -rotationspeed * Time.deltaTime);
         }
+        Debug.Log("MoveX = " + MoveX);
+        Debug.Log("MoveY = " + MoveY);
         cameraDistance += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
         cameraDistance = Mathf.Clamp(cameraDistance, cameraDistanceMin, cameraDistanceMax);
         speed = cameraDistance*2;
-        MainCamera.transform.Rotate(RotateX);
+        //MainCamera.transform.Rotate(RotateX);
         MainCamera.transform.Translate(MoveX, MoveY,0);
         MainCamera.orthographicSize = cameraDistance;
     }
