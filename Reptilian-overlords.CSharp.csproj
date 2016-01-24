@@ -93,6 +93,8 @@
     <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+    <None Include="Assets\simple ui example\Fonts\Jupiter\LICENSE.txt" />
+    <None Include="Assets\simple ui example\Textures and Sprites\SF UI\Background\LICENSE.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

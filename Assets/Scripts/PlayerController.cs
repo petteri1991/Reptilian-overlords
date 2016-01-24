@@ -28,23 +28,23 @@ public class PlayerController : MonoBehaviour {
     float MoveX = 0;
     float MoveY = 0;
     void Update () {
-        /*
-        MoveVertical = Input.GetAxis("Vertical");
-        MoveHorizontal = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.E))
-            Interact = true;
-        else
-            Interact = false;
+            /*
+            MoveVertical = Input.GetAxis("Vertical");
+            MoveHorizontal = Input.GetAxis("Horizontal");
+            if (Input.GetKeyDown(KeyCode.E))
+                Interact = true;
+            else
+                Interact = false;
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-            Run = true;
-        if(Input.GetKeyUp(KeyCode.LeftShift))
-            Run = false;
-        animat.SetFloat("MoveVertical", MoveVertical);
-        animat.SetBool("Run", Run);
-        agent.transform.Rotate(0, MoveHorizontal * 1.8f, 0, Space.World);
-        */
-        animat.SetBool("Interact", Interact);
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+                Run = true;
+            if(Input.GetKeyUp(KeyCode.LeftShift))
+                Run = false;
+            animat.SetFloat("MoveVertical", MoveVertical);
+            animat.SetBool("Run", Run);
+            agent.transform.Rotate(0, MoveHorizontal * 1.8f, 0, Space.World);
+            */
+            animat.SetBool("Interact", Interact);
         animat.SetFloat("MoveVertical", MoveVertical);
         if (Input.GetMouseButtonDown(0))
         {
@@ -78,5 +78,6 @@ public class PlayerController : MonoBehaviour {
             Interact = true;
         }
         MoveVertical = agent.velocity.magnitude;
+
     }
 }

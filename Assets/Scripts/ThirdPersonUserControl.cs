@@ -11,7 +11,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-        private bool interact = false;
+        private bool interact = false, lastinteract = false;
         public float speed;
         bool run = false;
         private Rigidbody rigbod;
@@ -35,7 +35,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_Character = GetComponent<ThirdPersonCharacter>();
             rigbod = GetComponent<Rigidbody>();
         }
-        AudioSource objaudio;
+        
         // Fixed update is called in sync with physics
         private void FixedUpdate()
         {
@@ -68,9 +68,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 speed = 2;
             }
 
-                
-            if (Input.GetKeyDown(KeyCode.E)) interact = true;
-            else interact = false;
+
+            if (Input.GetKeyDown(KeyCode.E))
+                interact = true;
+            else
+                interact = false;
 
 #endif
 
@@ -82,23 +84,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             else if(v < -0.1)
                 rigbod.velocity = -transform.forward * speed;
         }
-        bool lastinteract = false;
-        void OnTriggerStay(Collider col)
+        void OnTriggerStay(Collider Col)
         {
-            if (col.gameObject.tag == "Interactable")
+            Debug.Log("test");
+            if (interact && lastinteract)
             {
-                if (lastinteract && interact)
-                {
-                    col.gameObject.GetComponent<AudioSource>().Stop();
-                    lastinteract = false;
-                    interact = false;
-                }
-                if (interact)
-                {
-                    col.gameObject.GetComponent<AudioSource>().Play();
-                    lastinteract = true;
-                }   
+                Col.gameObject.GetComponent<AudioSource>().Stop();
+                lastinteract = false;
             }
+            if (interact)
+            {
+                Col.gameObject.GetComponent<AudioSource>().Play();
+                lastinteract = true;
+            }
+
+
         }
     }
 }
