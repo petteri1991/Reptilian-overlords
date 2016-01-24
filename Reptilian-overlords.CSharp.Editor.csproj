@@ -117,6 +117,7 @@
     <Compile Include="Assets\Scripts\Editor\GUIHierarchy.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
   </ItemGroup>

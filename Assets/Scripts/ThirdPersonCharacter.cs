@@ -124,7 +124,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// update the animator parameters
 			m_Animator.SetFloat("MoveVertical", m_ForwardAmount);
 			m_Animator.SetFloat("MoveHorizontal", m_TurnAmount);
-            m_Animator.SetBool("Crouch", m_Crouching);
+            //m_Animator.SetBool("Crouch", m_Crouching);
             m_Animator.SetBool("Run", m_Run);
             //m_Animator.SetBool("OnGround", m_IsGrounded);
             /*if (!m_IsGrounded)
