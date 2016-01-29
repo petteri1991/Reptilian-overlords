@@ -3,34 +3,56 @@ using System.Collections;
 
 public class CharacterScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-    float speed = 200.0f;
-    bool rotate = false;
-    float time = 1.0f;
-    // Update is called once per frame
-    void Update () {
-        float MoveX = 0; //speedX * Input.GetAxis("Horizontal");
-        float MoveY = 0; //speedY * Input.GetAxis("Vertical");
-        
-        if (Input.GetKey(KeyCode.D))
-        {
-            MoveX = speed * Time.deltaTime;
-            rotate = true;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            MoveX = -speed * Time.deltaTime;
-            rotate = true;
-        }
-        transform.Translate(MoveX, 0, 0);
-
-        
-    }
-    IEnumerator MyCoroutine()
+    NavMeshAgent agent;
+    Animator animator;
+    private bool interact = false, lastinteract = false;
+    string InteractObject = "";
+    void Start()
     {
-        yield return new WaitForSeconds(5);
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+    }
+
+    void Update () {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+            {
+                agent.destination = hit.point;
+                if (hit.transform.tag == "Interactable")
+                {
+                    interact = true;
+                    InteractObject = hit.transform.name;
+                }
+                else
+                {
+                    InteractObject = "";
+                    interact = false;
+                }
+            }
+            
+        }
+        animator.SetFloat("MoveVertical", agent.velocity.sqrMagnitude);
+        if (interact)
+        {
+            if (InteractObject != "")
+            {
+                if (lastinteract)
+                {
+                    GameObject.Find(InteractObject).GetComponent<AudioSource>().Stop();
+                    lastinteract = false;
+                }
+
+                if (agent.velocity.magnitude < 0.1f && agent.velocity.magnitude > -0.1f)
+                {
+                    GameObject.Find(InteractObject).GetComponent<AudioSource>().Play();
+                    lastinteract = true;
+                }
+
+            }
+        }
     }
 }
