@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Sabotage 2D.unity
+- path: Assets/Scenes/Sabotage 3thPerson.unity
   isLoaded: 1
   isActive: 1

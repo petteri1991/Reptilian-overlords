@@ -86,12 +86,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         }
         void OnTriggerStay(Collider Col)
         {
+            Debug.Log("Interact:" + interact);
+            Debug.Log("Lastinteract:" + lastinteract);
             if (interact && lastinteract)
             {
                 Col.gameObject.GetComponent<AudioSource>().Stop();
                 lastinteract = false;
             }
-            if (interact)
+            else if (interact)
             {
                 Col.gameObject.GetComponent<AudioSource>().Play();
                 lastinteract = true;
