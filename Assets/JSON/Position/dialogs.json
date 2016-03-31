@@ -1,0 +1,750 @@
+[
+    {
+        "id": 1,
+        "room": "",
+        "sayer": "you",
+        "text": "Moikkamoi!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 4,
+        "room": "",
+        "text": "sdfsdf",
+        "audio": "",
+        "next": [
+            {
+                "dialogue": 6,
+                "condition": "$gamestate1 == 3",
+                "gamestates": [
+                    "gamestate1"
+                ]
+            }
+        ],
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 5,
+        "room": "",
+        "text": "sdfsdfsdf",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 6,
+        "room": "",
+        "text": "asdasd",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 7,
+        "room": "",
+        "text": "ottaapa päähän...",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 8,
+        "room": "",
+        "text": "Noniin, tetävä on pölliä proto ja räjäyttää serveri!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 9,
+        "room": "",
+        "text": "Tässäpä näppärä pommi.. ottaisinko reppuun?",
+        "audio": "",
+        "next": 10,
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 10,
+        "room": "",
+        "text": [
+            {
+                "text": "Otetaan vaan!",
+                "points": "",
+                "audio": "",
+                "next": 18
+            },
+            {
+                "text": "Ei jaksa...",
+                "points": "",
+                "audio": "",
+                "next": ""
+            }
+        ],
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": [],
+        "textOnTop": ""
+    },
+    {
+        "id": 11,
+        "room": "",
+        "text": "Pelottava vempele...",
+        "audio": "",
+        "next": 12,
+        "defaultActions": [
+            {
+                "name": "changeGamestate",
+                "params": [
+                    "bag",
+                    "\"bomb\""
+                ]
+            },
+            {
+                "name": "hideAsset",
+                "params": [
+                    "proto_bomb"
+                ]
+            }
+        ],
+        "conditionalActions": []
+    },
+    {
+        "id": 12,
+        "room": "",
+        "text": "Armed and dangerous!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 13,
+        "room": "",
+        "text": "",
+        "audio": "",
+        "next": [
+            {
+                "dialogue": 15,
+                "condition": "$bag == \"empty\"",
+                "gamestates": [
+                    "bag"
+                ]
+            },
+            {
+                "dialogue": 14,
+                "condition": "$bag != \"empty\"",
+                "gamestates": [
+                    "bag"
+                ]
+            }
+        ],
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 14,
+        "room": "",
+        "text": "Ei mahdu reppuun, ei sitten millään..",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 15,
+        "room": "",
+        "text": "",
+        "audio": "",
+        "next": [
+            {
+                "dialogue": 9,
+                "condition": "$clicked == \"bomb\"",
+                "gamestates": [
+                    "clicked"
+                ]
+            },
+            {
+                "dialogue": 17,
+                "condition": "$clicked == \"proto\"",
+                "gamestates": [
+                    "clicked"
+                ]
+            }
+        ],
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 17,
+        "room": "",
+        "text": "Tätähän minä tässä olen havittelemassa. Ottaisinko reppuun?",
+        "audio": "",
+        "next": 10,
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 18,
+        "room": "",
+        "text": "",
+        "audio": "",
+        "next": [
+            {
+                "dialogue": 11,
+                "condition": "$clicked == \"bomb\"",
+                "gamestates": [
+                    "clicked"
+                ]
+            },
+            {
+                "dialogue": 19,
+                "condition": "$clicked == \"proto\"",
+                "gamestates": [
+                    "clicked"
+                ]
+            }
+        ],
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 19,
+        "room": "",
+        "text": "Suomi nousuun!",
+        "audio": "",
+        "next": 20,
+        "defaultActions": [
+            {
+                "name": "changeGamestate",
+                "params": [
+                    "bag",
+                    "\"proto\""
+                ]
+            },
+            {
+                "name": "hideAsset",
+                "params": [
+                    "proto_prototype"
+                ]
+            }
+        ],
+        "conditionalActions": []
+    },
+    {
+        "id": 20,
+        "room": "",
+        "text": "Valmista!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 21,
+        "room": "",
+        "text": "proto reppuun",
+        "audio": "",
+        "next": "",
+        "defaultActions": [
+            {
+                "name": "changeGamestate",
+                "params": [
+                    "bag",
+                    "proto"
+                ]
+            },
+            {
+                "name": "hideAsset",
+                "params": [
+                    "proto_prototype"
+                ]
+            }
+        ],
+        "conditionalActions": [
+            {
+                "condition": "$npcLocation == 'proto'",
+                "gamestates": [
+                    "npcLocation"
+                ],
+                "results": [
+                    "caughtStealing"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "room": "",
+        "text": "pommi reppuun",
+        "audio": "",
+        "next": "",
+        "defaultActions": [
+            {
+                "name": "changeGamestate",
+                "params": [
+                    "bag",
+                    "bomb"
+                ]
+            },
+            {
+                "name": "hideAsset",
+                "params": [
+                    "proto_bomb"
+                ]
+            }
+        ],
+        "conditionalActions": [
+            {
+                "condition": "$npcLocation == 'proto'",
+                "gamestates": [
+                    "npcLocation"
+                ],
+                "results": [
+                    "caughtStealing"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "room": "",
+        "text": "Ei mahdu reppuun..",
+        "audio": "",
+        "next": 24,
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 24,
+        "room": "",
+        "text": [
+            {
+                "text": "Laita proto takaisin",
+                "points": "",
+                "audio": "",
+                "next": 25
+            },
+            {
+                "text": "Älä tee mitään",
+                "points": "",
+                "audio": "",
+                "next": ""
+            }
+        ],
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": [],
+        "textOnTop": ""
+    },
+    {
+        "id": 25,
+        "room": "",
+        "text": "noniin, nyt on repussa tilaa.",
+        "audio": "",
+        "next": "",
+        "defaultActions": [
+            {
+                "name": "changeGamestate",
+                "params": [
+                    "bag",
+                    "empty"
+                ]
+            },
+            {
+                "name": "showAsset",
+                "params": [
+                    "proto_prototype"
+                ]
+            }
+        ],
+        "conditionalActions": []
+    },
+    {
+        "id": 26,
+        "room": "",
+        "text": "Ei mahdu reppuun",
+        "audio": "",
+        "next": 27,
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 27,
+        "room": "",
+        "text": [
+            {
+                "text": "Laita pommi takaisin",
+                "points": "",
+                "audio": "",
+                "next": 28
+            },
+            {
+                "text": "Älä tee mitään",
+                "points": "",
+                "audio": "",
+                "next": ""
+            }
+        ],
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": [],
+        "textOnTop": ""
+    },
+    {
+        "id": 28,
+        "room": "",
+        "text": "Noniin, taas on repussa tilaa",
+        "audio": "",
+        "next": "",
+        "defaultActions": [
+            {
+                "name": "showAsset",
+                "params": [
+                    "proto_bomb"
+                ]
+            },
+            {
+                "name": "changeGamestate",
+                "params": [
+                    "bag",
+                    "empty"
+                ]
+            }
+        ],
+        "conditionalActions": []
+    },
+    {
+        "id": 29,
+        "room": "",
+        "sayer": "dude",
+        "text": "Heeeei! Tuo ei ole yhtiön sääntöjen mukaista!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 30,
+        "room": "",
+        "sayer": "you",
+        "text": "Hei, protohuoneessa on tietokone ninku aivan totaalisen sekaisin.",
+        "audio": "",
+        "next": 31,
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 31,
+        "room": "",
+        "text": "Vainiin! Menen tarkistamaan.",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 32,
+        "room": "",
+        "text": "Hei, toi on varastamista!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 33,
+        "room": "",
+        "text": "Rikkinäinen tietokone.. hmm, saattaa toimia harhautuksena!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 34,
+        "room": "",
+        "sayer": "you",
+        "text": "Voisitko mennä pois?",
+        "audio": "",
+        "next": 35,
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 35,
+        "room": "",
+        "sayer": "dude",
+        "text": "Ööö, en?",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 36,
+        "room": "",
+        "text": "hihihihi!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 37,
+        "room": "",
+        "text": "KABOOM!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 38,
+        "room": "",
+        "text": "Serverihuoneessa räjähti!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 39,
+        "room": "",
+        "text": "jee!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 40,
+        "room": "",
+        "text": [
+            {
+                "text": "sdfsdf",
+                "points": "",
+                "audio": "",
+                "next": 41
+            }
+        ],
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": [],
+        "textOnTop": "efergegfef"
+    },
+    {
+        "id": 41,
+        "room": "",
+        "text": "sdfsdf",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 42,
+        "room": "",
+        "text": "Mitä kuuluu?",
+        "audio": "",
+        "next": 44,
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 43,
+        "room": "",
+        "sayer": "",
+        "text": "",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 44,
+        "room": "",
+        "text": [
+            {
+                "text": "Ihan hyvää",
+                "points": "",
+                "audio": "",
+                "next": 45
+            },
+            {
+                "text": "Ei kovin hyvää",
+                "points": "",
+                "audio": "",
+                "next": 46
+            },
+            {
+                "text": "Ei ollenkaan hyvää",
+                "points": "",
+                "audio": "",
+                "next": 47
+            }
+        ],
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": [],
+        "textOnTop": ""
+    },
+    {
+        "id": 45,
+        "room": "",
+        "text": "No mutta hieno kuulla!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [
+            {
+                "name": "moveCharacterTo",
+                "params": [
+                    100
+                ]
+            }
+        ],
+        "conditionalActions": []
+    },
+    {
+        "id": 46,
+        "room": "",
+        "text": "No höh..",
+        "audio": "",
+        "next": "",
+        "defaultActions": [
+            {
+                "name": "fade",
+                "params": [
+                    1,
+                    1
+                ]
+            },
+            {
+                "name": "fade",
+                "params": [
+                    0,
+                    1
+                ]
+            }
+        ],
+        "conditionalActions": []
+    },
+    {
+        "id": 47,
+        "room": "",
+        "text": "Ikävä kuullla!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 48,
+        "room": "",
+        "text": "Mene ja tuhoa serverihuone",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 49,
+        "room": "",
+        "text": "KABOOOM!!!!!!!!!!!!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 50,
+        "room": "",
+        "sayer": "you",
+        "text": "Jeee jee",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 51,
+        "room": "",
+        "sayer": "it_tuki",
+        "text": [
+            {
+                "text": "Terve",
+                "points": "",
+                "audio": "",
+                "next": 52
+            }
+        ],
+        "audio": "",
+        "defaultActions": [],
+        "conditionalActions": [],
+        "textOnTop": "Hei"
+    },
+    {
+        "id": 52,
+        "room": "",
+        "sayer": "you",
+        "text": "Katso tonne",
+        "audio": "",
+        "next": "",
+        "defaultActions": [
+            {
+                "name": "flipNpc",
+                "params": [
+                    "character",
+                    "left"
+                ]
+            },
+            {
+                "name": "flipNpc",
+                "params": [
+                    "it_tuki",
+                    "left"
+                ]
+            },
+            {
+                "name": "changeGamestate",
+                "params": [
+                    "it_tuki_kaantyy",
+                    true
+                ]
+            }
+        ],
+        "conditionalActions": []
+    },
+    {
+        "id": 53,
+        "room": "",
+        "sayer": "it_tuki",
+        "text": "HEI ÄLÄ KOSKE SIIHEN !!!!!!!!",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    },
+    {
+        "id": 54,
+        "room": "",
+        "sayer": "it_tuki",
+        "text": "MITÄ HELVETTIÄ TAPAHTU??????",
+        "audio": "",
+        "next": "",
+        "defaultActions": [],
+        "conditionalActions": []
+    }
+]

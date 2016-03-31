@@ -1,0 +1,37 @@
+[
+    [
+        "player",
+        "img/player.png",
+        "img/player.json"
+    ],
+    [
+        "homeAtlas",
+        "img/home/homeAtlas.png",
+        "img/home/homeAtlas.json"
+    ],
+    [
+        "outsideAtlas",
+        "img/outside/outsideAtlas.png",
+        "img/outside/outsideAtlas.json"
+    ],
+    [
+        "hallwayAtlas",
+        "img/hallway/hallwayAtlas.png",
+        "img/hallway/hallwayAtlas.json"
+    ],
+    [
+        "protoAtlas",
+        "img/proto/protoAtlas.png",
+        "img/proto/protoAtlas.json"
+    ],
+    [
+        "room0Atlas",
+        "img/room0/room0Atlas.png",
+        "img/room0/room0Atlas.json"
+    ],
+    [
+        "serveriAtlas",
+        "img/serveri/serveriAtlas.png",
+        "img/serveri/serveriAtlas.json"
+    ]
+]

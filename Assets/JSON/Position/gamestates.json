@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "activeRoom",
+        "type": "string",
+        "value": "room0"
+    },
+    {
+        "id": 2,
+        "name": "money",
+        "type": "int",
+        "value": 0
+    },
+    {
+        "id": 13,
+        "name": "pommi",
+        "type": "mixed",
+        "value": false
+    },
+    {
+        "id": 14,
+        "name": "serveri",
+        "type": "mixed",
+        "value": false
+    },
+    {
+        "id": 15,
+        "name": "it_tuki_kaantyy",
+        "type": "mixed",
+        "value": false
+    }
+]

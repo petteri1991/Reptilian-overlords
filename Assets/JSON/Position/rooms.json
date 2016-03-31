@@ -1,0 +1,263 @@
+[
+    {
+        "id": 3,
+        "name": "hallway",
+        "atlasName": "hallwayAtlas",
+        "bgImage": "img/hallway/hallway_bg.png",
+        "bgWidth": 2048,
+        "bgHeight": 720,
+        "spawnX": 200,
+        "spawnY": 720,
+        "spawnFace": "left",
+        "music": "",
+        "assets": [
+            "hallway_doorTo_room0",
+            "hallway_doorTo_serveri",
+            "hallway_doorTo_proto",
+            "hallway_watercooler",
+            "npc_it_tuki_hallway"
+        ],
+        "defaultActions": [],
+        "conditionalActions": [
+            {
+                "condition": "$serveri == 'odottaa'",
+                "gamestates": [
+                    "serveri"
+                ],
+                "results": [
+                    {
+                        "name": "fade",
+                        "params": [
+                            1,
+                            1,
+                            "ffffff"
+                        ]
+                    },
+					{
+                        "name": "playFx",
+                        "params": [
+                            explosion_sound
+                        ]
+                    },
+                    {
+                        "name": "launchDialogue",
+                        "params": [
+                            49
+                        ]
+                    },
+                    {
+                        "name": "fade",
+                        "params": [
+                            0,
+                            1,
+                            "ffffff"
+                        ]
+                    },
+                    {
+                        "name": "changeGamestate",
+                        "params": [
+                            "serveri",
+                            "exploded"
+                        ],
+                        "wait": true
+                    },
+                    {
+                        "name": "modifyNpc",
+                        "params": [
+                            "it_tuki_hallway",
+                            "show"
+                        ]
+                    },
+                    {
+                        "name": "launchDialogue",
+                        "params": [
+                            54
+                        ]
+                    },
+                    {
+                        "name": "wait",
+                        "params": [
+                            1
+                        ]
+                    },
+                    {
+                        "name": "modifyNpc",
+                        "params": [
+                            "it_tuki_hallway",
+                            "getOut",
+                            "hallway_doorTo_serveri"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "minX": 0,
+        "maxX": 2048
+    },
+    {
+        "id": 1,
+        "name": "home",
+        "atlasName": "homeAtlas",
+        "bgImage": "img/home/home_bg.png",
+        "bgMusic": "bassogroove",
+        "bgWidth": 2045,
+        "bgHeight": 720,
+        "spawnX": 200,
+        "spawnY": 720,
+        "spawnFace": "right",
+        "music": "nopeafunkihtava1",
+        "assets": [
+            "home_ball",
+            "home_doorTo_outside"
+        ],
+        "defaultActions": [],
+        "conditionalActions": [],
+        "minX": 0,
+        "maxX": 800
+    },
+    {
+        "id": 2,
+        "name": "outside",
+        "atlasName": "outsideAtlas",
+        "bgImage": "img/outside/outside_bg.png",
+        "bgMusic": "tidudidduAmbience",
+        "bgWidth": 2045,
+        "bgHeight": 720,
+        "spawnX": 200,
+        "spawnY": 720,
+        "spawnFace": "right",
+        "music": "nopeafunkihtava1",
+        "assets": [
+            "outside_doorTo_home"
+        ],
+        "defaultActions": [],
+        "conditionalActions": [],
+        "minX": 0,
+        "maxX": 2045,
+        "scale": 0.48
+    },
+    {
+        "id": 4,
+        "name": "proto",
+        "atlasName": "protoAtlas",
+        "bgImage": "img/proto/proto_bg.png",
+        "bgWidth": 1280,
+        "bgHeight": 720,
+        "spawnX": 200,
+        "spawnY": 720,
+        "spawnFace": "left",
+        "music": "",
+        "assets": [
+            "proto_doorTo_hallway",
+            "proto_prototype",
+            "proto_table",
+            "proto_bomb",
+            "proto_imac",
+            "npc_it_tuki"
+        ],
+        "defaultActions": [
+            {
+                "name": "modifyNpc",
+                "params": [
+                    "it_tuki",
+                    "show"
+                ]
+            }
+        ],
+        "conditionalActions": [
+            {
+                "condition": "$serveri == 'exploded'",
+                "gamestates": [
+                    "serveri"
+                ],
+                "results": [
+                    "setNpcToProto",
+                    {
+                        "name": "modifyNpc",
+                        "params": [
+                            "it_tuki",
+                            "hide"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "minX": 0,
+        "maxX": 1280
+    },
+    {
+        "id": 5,
+        "name": "room0",
+        "atlasName": "room0Atlas",
+        "bgImage": "img/room0/room0_bg.png",
+        "bgWidth": 1280,
+        "bgHeight": 720,
+        "spawnX": 562,
+        "spawnY": 720,
+        "spawnFace": "right",
+        "music": "",
+        "assets": [
+            "room0_doorTo_hallway"
+        ],
+        "defaultActions": [
+            {
+                "name": "launchDialogue",
+                "params": [
+                    48
+                ]
+            }
+        ],
+        "conditionalActions": [],
+        "minX": 0,
+        "maxX": 1280
+    },
+    {
+        "id": 6,
+        "name": "serveri",
+        "atlasName": "serveriAtlas",
+        "bgImage": "img/serveri/serveri_bg.png",
+        "bgWidth": 1280,
+        "bgHeight": 720,
+        "spawnX": 200,
+        "spawnY": 720,
+        "spawnFace": "left",
+        "music": "",
+        "assets": [
+            "serveri_doorTo_hallway",
+            "serveri_rack",
+            "serveri_bomb"
+        ],
+        "defaultActions": [],
+        "conditionalActions": [
+            {
+                "condition": "$serveri == 'exploded'",
+                "gamestates": [
+                    "serveri"
+                ],
+                "results": [
+                    {
+                        "name": "hideAsset",
+                        "params": [
+                            "serveri_bomb"
+                        ]
+                    },
+                    {
+                        "name": "playAnimation",
+                        "params": [
+                            "serveri_rack",
+                            "exploded"
+                        ]
+                    },
+                    {
+                        "name": "launchDialogue",
+                        "params": [
+                            50
+                        ]
+                    }
+                ]
+            }
+        ],
+        "minX": 0,
+        "maxX": 1280
+    }
+]
