@@ -6,7 +6,7 @@ using System;
 
 public class GUIScript : MonoBehaviour {
 
-    
+    Configure config = new Configure();
     float windowWidth, windowHeight, RightX, RightY, BottomX, BottomY, BottomHeight, BottomWidth, scrollright, RightWidth, RightHeight;
     public GUIStyle MySkin;
     public GUIStyle NewsSkin;
@@ -32,8 +32,8 @@ public class GUIScript : MonoBehaviour {
         {
             theTime = 0;
         }
-        windowWidth = Screen.width;
-        windowHeight = Screen.height;
+        windowWidth = config.WindowWidth;
+        windowHeight = config.WindowHeight;
         RightWidth = 200;
         RightHeight = windowHeight;
         RightX = windowWidth - RightWidth;

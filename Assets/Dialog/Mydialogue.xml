@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DialogueFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>Script</name>
+  <hideFlags>None</hideFlags>
+  <entries>
+    <DialogueEntry>
+      <id>First Dialogue</id>
+      <maxLineId>3</maxLineId>
+      <speakers>
+        <string />
+        <string>Tutorial</string>
+        <string>User</string>
+      </speakers>
+    </DialogueEntry>
+  </entries>
+  <lines>
+    <DialogueLine>
+      <id>0</id>
+      <dialogueEntry>First Dialogue</dialogueEntry>
+      <dialogue />
+      <output>
+        <int>1</int>
+      </output>
+      <position>
+        <x>10</x>
+        <y>10</y>
+      </position>
+      <userData />
+      <speaker />
+    </DialogueLine>
+    <DialogueLine>
+      <id>1</id>
+      <dialogueEntry>First Dialogue</dialogueEntry>
+      <dialogue>Hello who are you</dialogue>
+      <output>
+        <int>2</int>
+      </output>
+      <position>
+        <x>160</x>
+        <y>10</y>
+      </position>
+      <userData />
+      <speaker>Tutorial</speaker>
+    </DialogueLine>
+    <DialogueLine>
+      <id>2</id>
+      <dialogueEntry>First Dialogue</dialogueEntry>
+      <dialogue>My name is Player</dialogue>
+      <output />
+      <position>
+        <x>296</x>
+        <y>121</y>
+      </position>
+      <userData>1</userData>
+      <speaker>User</speaker>
+    </DialogueLine>
+  </lines>
+</DialogueFile>
